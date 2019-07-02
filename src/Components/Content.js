@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import './Content.css'
 import Message from './Message'
 
 class Content extends Component {

@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import './Sidebar.css'
 import Channel from './Channel'
 
 class Sidebar extends Component {
@@ -21,13 +20,11 @@ class Sidebar extends Component {
 	}
     // Functions
     selectChannel = (id) => {
-		console.log(id)
 		let channels = this.state.channels
 		channels.forEach((c) => delete c.active)
 		let channel = channels.find((c) => c.id === id)
 		channel.active = true
 		this.setState({channels})
-		console.log(this.state.channels)
     }
     
 	// Render
