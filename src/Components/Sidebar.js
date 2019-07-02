@@ -25,8 +25,9 @@ class Sidebar extends Component {
 		let channel = channels.find((c) => c.id === id)
 		channel.active = true
 		this.setState({channels})
-    }
-    
+	}
+	
+
 	// Render
 	render() {
 		return (
@@ -36,8 +37,10 @@ class Sidebar extends Component {
 				<ul className="list-unstyled">
 					{
 						this.state.channels.map((c) => {
-                            return <Channel channel={c} key={c.id} 
-                            selectChannel={this.selectChannel} />
+							return <Channel channel={c}
+							key={c.id} 
+							selectChannel={this.selectChannel} 
+							/>
 						})
 					}
 				</ul>

@@ -20,6 +20,8 @@ class Content extends Component {
 		]
 	}
 	// Functions
+
+	
 	// Render
 	render() {
 		return (
