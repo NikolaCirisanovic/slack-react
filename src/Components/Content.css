@@ -1,0 +1,38 @@
+#content {
+    background: #fff;
+    display: grid;
+    grid-template-rows: auto 80px;
+}
+
+#messages {
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+}
+
+.message {
+    margin-bottom: 20px;
+    border: 1px solid #656465;
+    border-radius: 8px;
+    padding: 8px;
+    margin: 10px;
+    -webkit-box-shadow: 48px 30px 137px -30px rgba(0, 0, 0, 0.29);
+    -moz-box-shadow: 48px 30px 137px -30px rgba(0, 0, 0, 0.29);
+    box-shadow: 48px 30px 137px -30px rgba(0, 0, 0, 0.29);
+}
+
+.message:hover {
+    background: #F8F8F8;
+}
+
+.message .author {
+    font-weight: bold;
+}
+
+.message .timestamp {
+    color: #656465;
+    font-size: 14px;
+}
+
+#newmessage {
+    padding: 10px;
+}

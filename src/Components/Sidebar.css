@@ -1,0 +1,21 @@
+#sidebar {
+    background: #4D394A;
+    color: white;
+    padding: 20px;
+}
+
+#sidebar h2 {
+    font-size: 16px;
+}
+#sidebar h3 {
+    font-size: 15px;
+}
+
+#sidebar li {
+    cursor: pointer;
+}
+
+#sidebar li.active {
+    color: white;
+    background: orange;
+}
