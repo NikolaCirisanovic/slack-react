@@ -8,12 +8,13 @@ class Channel extends Component {
 	// Functions
 	componentDidMount() {
 		console.log(this.props);
-		
 	}
+
 	// Render
 	render() {
 		return (
-			<li># {this.state.channel.name}</li>
+			<li onClick={() => this.props.selectChannel(this.state.channel.id)}>#
+			{this.state.channel.name}</li>
 		)
 	}
 }

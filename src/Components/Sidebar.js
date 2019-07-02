@@ -19,7 +19,17 @@ class Sidebar extends Component {
 			}
 		]
 	}
-	// Functions
+    // Functions
+    selectChannel = (id) => {
+		console.log(id)
+		let channels = this.state.channels
+		channels.forEach((c) => delete c.active)
+		let channel = channels.find((c) => c.id === id)
+		channel.active = true
+		this.setState({channels})
+		console.log(this.state.channels)
+    }
+    
 	// Render
 	render() {
 		return (
@@ -29,7 +39,8 @@ class Sidebar extends Component {
 				<ul className="list-unstyled">
 					{
 						this.state.channels.map((c) => {
-							return <Channel channel={c} key={c.id} />
+                            return <Channel channel={c} key={c.id} 
+                            selectChannel={this.selectChannel} />
 						})
 					}
 				</ul>
