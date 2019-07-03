@@ -20,8 +20,19 @@ class Content extends Component {
 		]
 	}
 	// Functions
+	createMessage = (e,text) => {
+		e.preventDefault()
+		let message = ({
+			id: 3,
+			author: "Nikola Cirisanovic",
+			date: '03.07.2019 - 9:22 AM',
+			body: text
+		})
+		let messages = this.state.messages
+		messages.push(message)
+		this.setState({messages})
+	}	
 
-	
 	// Render
 	render() {
 		return (
@@ -33,10 +44,11 @@ class Content extends Component {
 						})
 					}
 				</div>
-				<NewMessage />
+				<NewMessage createMessage={this.createMessage} />
 			</div>
 		)
 	}
 }
 
 export default Content
+
