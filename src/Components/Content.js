@@ -1,37 +1,38 @@
 import React, {Component} from 'react'
+import './Content.css'
 import Message from './Message'
 import NewMessage from './NewMessage'
+import axios from 'axios'
 
 class Content extends Component {
 	// Data
 	state = {
-		messages: [
-			{
-				id: 1,
-				author: 'Tony Russo',
-				date: '2 Jul 2019 - 9:09AM',
-				body: 'Hello World'
-			}, {
-				id: 2,
-				author: 'Nikola Cirisanovic',
-				date: '2 Jul 2019 - 9:12AM',
-				body: 'Wooooooooooooosaaaaa'
-			}
-		]
+		messages: []
 	}
 	// Functions
-	createMessage = (e,text) => {
-		e.preventDefault()
-		let message = ({
-			id: 3,
-			author: "Nikola Cirisanovic",
-			date: '03.07.2019 - 9:22 AM',
-			body: text
+
+	componentWillMount() {
+		axios.get('http://localhost:4000/api/messages').then((res) => {
+			this.setState({
+				messages: res.data
+			})
+		}).catch((err) => {
+			console.log('err', err)
 		})
+	}
+
+	createMessage = (e, text) => {
+		e.preventDefault()
+		let message = {
+			id: 7,
+			author: 'Tony Russo',
+			date: '3 July 2019 - 9:42 AM',
+			body: text
+		}
 		let messages = this.state.messages
 		messages.push(message)
 		this.setState({messages})
-	}	
+	}
 
 	// Render
 	render() {
@@ -40,7 +41,7 @@ class Content extends Component {
 				<div id="messages">
 					{
 						this.state.messages.map((m) => {
-							return <Message message={m} key={m.id} />
+							return <Message message={m} key={m._id} />
 						})
 					}
 				</div>
@@ -51,4 +52,3 @@ class Content extends Component {
 }
 
 export default Content
-
