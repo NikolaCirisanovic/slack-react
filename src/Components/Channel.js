@@ -5,20 +5,18 @@ class Channel extends Component {
 	state = {
 		channel: this.props.channel
 	}
-
 	// Functions
-	componentDidMount() {
-		console.log(this.props);
+	componentWillMount() {
+		console.log(this.props)
 	}
 
 	// Render
 	render() {
 		return (
-			<li className={ this.state.channel.active ? 'active' : '' } onClick={() => this.props.selectChannel(this.state.channel.id)}>
-				#{this.state.channel.name}
-			</li>
+			<li className={ this.state.channel.active ? 'active' : '' } onClick={() => this.props.selectChannel(this.state.channel._id)}># {this.state.channel.name}</li>
 		)
 	}
 }
 
 export default Channel
+

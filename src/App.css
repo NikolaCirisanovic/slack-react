@@ -1,11 +1,15 @@
 html, body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Lato', sans-serif;
+	margin: 0;
+	padding: 0;
+	font-family: Lato, sans-serif;
 }
 
 #wrap {
-  height:100vh;
-  display: grid;
-  grid-template-columns: 200px auto;
+	height: 100vh;
+	display: grid;
+	grid-template-columns: 200px auto;
+}
+
+.signup {
+	margin-top: 100px;
 }

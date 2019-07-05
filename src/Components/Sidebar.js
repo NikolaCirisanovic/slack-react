@@ -24,9 +24,10 @@ class Sidebar extends Component {
 	selectChannel = (id) => {
 		let channels = this.state.channels
 		channels.forEach((c) => delete c.active)
-		let channel = channels.find((c) => c.id === id)
+		let channel = channels.find((c) => c._id === id)
 		channel.active = true
 		this.setState({channels})
+		this.props.getMessages(id)
 	}
 	// Render
 	render() {

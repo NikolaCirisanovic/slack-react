@@ -21,12 +21,22 @@ class Content extends Component {
 		})
 	}
 
+	componentWillReceiveProps(props) {
+		axios.get(`http://localhost:4000/api/messages?channel=${props.channel}`).then((res) => {
+			this.setState({
+				messages: res.data
+			})
+		}).catch((err) => {
+			console.log('err', err)
+		})
+	}
+
 	createMessage = (e, text) => {
 		e.preventDefault()
 		let message = {
 			id: 7,
-			author: 'Tony Russo',
-			date: '3 July 2019 - 9:42 AM',
+			author: 'Nikola',
+			date: 'today',
 			body: text
 		}
 		let messages = this.state.messages

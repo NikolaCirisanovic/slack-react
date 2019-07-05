@@ -31,6 +31,7 @@
 .message .timestamp {
     color: #656465;
     font-size: 14px;
+    margin: 15px;
 }
 
 #newmessage {
